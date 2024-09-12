@@ -20,7 +20,7 @@ do
 done
 
 # Instalar paquetes adicionales
-apt install sssd-tools sssd libnss-sss libpam-sss adcli packagekit sssd-ad sssd-tools realmd -y
+apt-get install sssd-tools sssd libnss-sss libpam-sss adcli packagekit sssd-ad sssd-tools realmd -y
 
 # Detener y deshabilitar servicios innecesarios
 systemctl stop smbd nmbd winbind
