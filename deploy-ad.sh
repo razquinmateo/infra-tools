@@ -29,12 +29,6 @@ systemctl disable smbd nmbd winbind
 # Provisionar Samba AD
 samba-tool domain provision --server-role=dc --use-rfc2307 --dns-backend=SAMBA_INTERNAL --realm=MRAI-TIPY-UY.DUCKDNS.ORG --domain=MRAI-TIPY --adminpass=Passw0rd
 
-# Validar si la provisión fue exitosa
-if [ $? -ne 0 ]; then
-    echo "Error al provisionar el dominio de Samba."
-    exit 1
-fi
-
 # Restaurar el archivo resolv.conf
 sed -i 's/8.8.8.8/127.0.0.1/' /etc/resolv.conf
 
